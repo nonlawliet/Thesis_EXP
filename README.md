@@ -1,2 +1,2 @@
-# data-science_bootcamp7
+# Data Science Project
 All my data projects

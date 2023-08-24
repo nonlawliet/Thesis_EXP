@@ -4,12 +4,12 @@ library(tidyverse)
 
 # plot line chart
 ## import data
-case1_air_0barg_r2 <- read_xlsx("Case1_Air_ATM_R2.xlsx", sheet = "Raw_data")
+df <- read_xlsx("Case1_Air_ATM_R2.xlsx", sheet = "Raw_data")
 
 ## prep data
 Time_Case_Test <- "2023-04-24 20:23:50"
 
-case1_air_0barg_r2 <- case1_air_0barg_r2 %>%
+df <- df %>%
   rename(T0_R2 = `Temperature_0 (Formula Result)`,
          T1_R2 = `Temperature_1 (Formula Result)`,
          T2_R2 = `Temperature_2 (Formula Result)`,
@@ -25,6 +25,9 @@ case1_air_0barg_r2 <- case1_air_0barg_r2 %>%
                             "Flame",
                             "Battery"), each = 2400)) %>%
   select(x, y, legend)
+
+## store df in R
+case1_air_0barg_r2 <- df
 
 ## viz data
 ### observed point
